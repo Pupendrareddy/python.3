@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage ('git checkout') {
+            steps {
+               git 'https://github.com/Pupendrareddy/python.3.git'
+             }
+          }         
+        stage ('test') {
+            steps {
+                shell 'ECHO Hello World'
+              }
+          }
+        stage ('build') {
+            steps {
+                shell 'docker build -t mydockerfile .'
+                shell 'docker run --mycontainer -d -p 3000:3000 WORK_REPO'
+              }
+          }
+     }
+}     
