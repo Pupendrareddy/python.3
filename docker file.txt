@@ -2,5 +2,5 @@ FROM ubuntu:latest
 RUN  mkdir nginx
 RUN  cd  nginx
 WORKDIR  /nginx
-ADD hello_world.py .
+ADD hello_world.
 CMD ["ubuntu", "-u", "hello_world.py"]
