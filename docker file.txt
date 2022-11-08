@@ -1,6 +1,6 @@
-FROM ubuntu:latest
-RUN  mkdir nginx
-RUN  cd  nginx
-WORKDIR  /nginx
-ADD hello_world.
-CMD ["ubuntu", "-u", "hello_world.py"]
+FROM node:14
+WORKDIR /usr/app
+COPY package*.hello world ./
+RUN npm install
+EXPOSE 3000
+CMD ["node","app.js"]
