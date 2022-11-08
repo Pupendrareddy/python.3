@@ -1,6 +1,6 @@
-FROM node:14
+FROM python:3
 WORKDIR /usr/app
 COPY package*.nginx./
 RUN npm install
 EXPOSE 3000
-CMD ["node","nginx"]
+CMD ["python","nginx"]
