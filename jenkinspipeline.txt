@@ -14,7 +14,7 @@ pipeline {
         stage ('build') {
             steps {
                 shell 'docker build -t mydockerfile .'
-                shell 'docker run --mycontainer -d -p 3000:3000 WORK_REPO'
+                shell 'docker run --mycontainer -d -p 3000:3000 nginx'
               }
           }
      }
