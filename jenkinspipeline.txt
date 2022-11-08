@@ -14,8 +14,13 @@ pipeline {
         stage ('build') {
             steps {
                 shell 'docker build -t mydockerfile .'
-                shell 'docker run --mycontainer -d -p 3000:3000 nginx'
+                shell 'docker run --mycontainer -d -p 3000:3000 npm'
               }
           }
-     }
-}     
+        stage ('deploying app to docker') {
+            steps {
+                shell 'dockerdeploy(configs: "mydockerfile", dockconfigid: "docker")'
+            }
+        }
+    }
+}
